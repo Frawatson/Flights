@@ -38,7 +38,9 @@ pipeline {
          stage('Deploy to Kubernetes') {
             steps {
                 // Deploy the Docker image to a Kubernetes cluster
-                sh 'kubernetesDeploy(configs: "deployment.yaml", "service.yaml")'
+                script{
+                    kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
+                }
             }
         }
     }
