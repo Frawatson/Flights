@@ -3,7 +3,7 @@ pipeline {
     
     environment {	
 		DOCKERHUB_CREDENTIALS=credentials('Dockerhublogin')
-		KUBERNETES_CREDENTIALS=credentials('kubeconfig')
+		KUBERNETES_CREDENTIALS=credentials('.kubefile')
 	}
 
     stages {
