@@ -39,7 +39,7 @@ pipeline {
             steps {
                 // Deploy the Docker image to a Kubernetes cluster
                 script {
-                    kubernetesDeploy(configs: "deployment.yaml", "service.yaml", kubeconfigId: "kubeconfig")
+                    kubernetesApply(configs: "deployment.yaml", "service.yaml", kubeconfigId: "kubeconfig")
                 }
             }
         }
