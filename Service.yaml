@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flights-service
+spec:
+  selector:
+    app: flights
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort  # Use "LoadBalancer" for cloud providers like AWS or GCP; use "NodePort" for local Kubernetes clusters

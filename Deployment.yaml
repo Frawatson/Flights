@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flights
+spec:
+  replicas: 3  # Change this as needed
+  selector:
+    matchLabels:
+      app: flights
+  template:
+    metadata:
+      labels:
+        app: flights
+    spec:
+      serviceAccountName: jenkins
+      containers:
+        - name: flights
+          image: frawatson/flights:latest  # Replace <CONTAINER_REGISTRY> with your registry details
+          ports:
+            - containerPort: 80
