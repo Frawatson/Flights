@@ -40,8 +40,8 @@ pipeline {
                 // Deploy the Docker image to a Kubernetes cluster
                 script {
                     withKubeConfig(credentialsId: '.kubefile'){
-			    sh "kubectl apply -f deployment.yaml"
-			    sh "kubectl apply -f service.yaml"
+			    sh "kubectl apply -f Deployment.yaml"
+			    sh "kubectl apply -f Service.yaml"
 		    }
                 }
             }
