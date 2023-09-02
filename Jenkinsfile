@@ -3,7 +3,7 @@ pipeline {
     
     environment {	
 		DOCKERHUB_CREDENTIALS=credentials('Dockerhublogin')
-		//KUBERNETES_CREDENTIALS=credentials('kubeconfig')
+		KUBERNETES_CREDENTIALS=credentials('kubeconfig')
 	}
 
     stages {
@@ -39,7 +39,10 @@ pipeline {
             steps {
                 // Deploy the Docker image to a Kubernetes cluster
                 script {
-                    kubernetesApply(configs: "deployment.yaml", "service.yaml", kubeconfigId: "kubeconfig")
+                    withKubeConfig(credentialsID: 'kubeconfig'){
+			    sh "kubectl apply -f deployment.yaml"
+			    sh "kubectl apply -f service.yaml"
+		    }
                 }
             }
         }
