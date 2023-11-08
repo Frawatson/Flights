@@ -12,7 +12,6 @@ spec:
       labels:
         app: flights
     spec:
-      serviceAccountName: jenkins
       containers:
         - name: flights
           image: frawatson/flights:latest  # Replace <CONTAINER_REGISTRY> with your registry details
