@@ -15,5 +15,6 @@ spec:
       containers:
         - name: flights
           image: frawatson/flights:latest  # Replace <CONTAINER_REGISTRY> with your registry details
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
