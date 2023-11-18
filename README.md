@@ -1,10 +1,8 @@
 # Flights
 
-# My HTML/CSS Web Application
-
 ## Overview
 
-This repository contains the source code for a simple HTML/CSS web application. The application is hosted on a Kubernetes cluster, and the deployment process is automated using Jenkins CI/CD pipeline.
+This repository contains the source code for a javascript, HTML and CSS Applicatoin. The application is hosted on a Kubernetes cluster, and the deployment process is automated using Jenkins CI/CD pipeline.
 
 ## Technologies Used
 
